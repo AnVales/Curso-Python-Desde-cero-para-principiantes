@@ -9,16 +9,17 @@ class Coche():
         
     # Metodos
     def acelerar(self):
-        self.velocidad += 10
-        print(f"{self.marca} {self.modelo} está acelerando. Velocidad: {self.velocidad} km/h")
-    
+        if self.velocidad < 200:
+            self.velocidad += 10
+            print(f"{self.marca} {self.modelo} está acelerando. Velocidad: {self.velocidad} km/h")
+        else:
+         print(f"{self.marca} {self.modelo} no puede acelerar más. Velocidad: {self.velocidad} km/h")
+           
     def frenar(self):
         
-        if self.velocidad <= 0:
-            print(f"{self.marca} {self.modelo} ya está parado.")
-        elif 0 < self.velocidad <= 10:
+        if self.velocidad <= 10:
             self.velocidad = 0
-            print(f"{self.marca} {self.modelo} ha parado.")
+            print(f"{self.marca} {self.modelo} está parado.")
         elif self.velocidad > 10:
             self.velocidad -= 10
             print(f"{self.marca} {self.modelo} está frenando. Velocidad: {self.velocidad} km/h")
