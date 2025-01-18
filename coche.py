@@ -1,0 +1,28 @@
+class Coche():
+    
+    # Atributos
+    def __init__(self, marca, modelo, año):
+        self.marca = marca
+        self.modelo = modelo
+        self.año = año
+        self.velocidad = 0
+        
+    # Metodos
+    def acelerar(self):
+        self.velocidad += 10
+        print(f"{self.marca} {self.modelo} está acelerando. Velocidad: {self.velocidad} km/h")
+    
+    def frenar(self):
+        
+        if self.velocidad <= 0:
+            print(f"{self.marca} {self.modelo} ya está parado.")
+        elif 0 < self.velocidad <= 10:
+            self.velocidad = 0
+            print(f"{self.marca} {self.modelo} ha parado.")
+        elif self.velocidad > 10:
+            self.velocidad -= 10
+            print(f"{self.marca} {self.modelo} está frenando. Velocidad: {self.velocidad} km/h")
+        
+    def informacion(self):
+        return f"{self.marca} {self.modelo} ({self.año}) - Velocidad actual: {self.velocidad} km/h"
+        
